@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Murage Konnect</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icon library -->
+    <link href="https://unpkg.com/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="../../styles/dashboard.css">
+    <link rel="stylesheet" href="../../styles/components/sidebar.css">
+    <link rel="stylesheet" href="../../styles/components/tasks.css">
+    <link rel="stylesheet" href="../../styles/components/reports.css">
+    <link rel="stylesheet" href="../../styles/components/forms.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Admin Sidebar -->
+        <aside class="sidebar">
+            <!-- Similar structure but with admin-specific navigation -->
+            <div class="sidebar-header">
+                <a href="/" class="sidebar-logo">
+                    <div class="sidebar-logo-icon">
+                        <span>MK</span>
+                    </div>
+                    <span class="sidebar-logo-text">Murage Konnect</span>
+                </a>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3 class="nav-section-title">Administration</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="ri-dashboard-line"></i>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="ri-team-line"></i>
+                                Team Management
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="ri-user-follow-line"></i>
+                                Account Verification
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="ri-shield-check-line"></i>
+                                Security
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="ri-money-dollar-circle-line"></i>
+                                Billing & Subscriptions
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3 class="nav-section-title">System</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="ri-settings-line"></i>
+                                System Settings
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="ri-database-2-line"></i>
+                                Logs
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="ri-information-line"></i>
+                                System Status
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <span>MA</span>
+                    </div>
+                    <div class="user-details">
+                        <div class="user-name">Mike Admin</div>
+                        <div class="user-role">System Admin</div>
+                    </div>
+                    <button class="dropdown-toggle">
+                        <i class="ri-more-2-fill"></i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Dashboard Header -->
+            <header class="dashboard-header">
+                <div class="header-search">
+                    <div class="search-wrapper">
+                        <i class="ri-search-line"></i>
+                        <input type="text" placeholder="Search users, accounts..." class="search-input">
+                    </div>
+                </div>
+                
+                <div class="header-actions">
+                    <button class="header-action-btn">
+                        <i class="ri-notification-3-line"></i>
+                        <span class="badge">7</span>
+                    </button>
+                    <button class="header-action-btn">
+                        <i class="ri-settings-4-line"></i>
+                    </button>
+                    <button class="header-action-btn">
+                        <i class="ri-question-line"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Admin Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Platform Overview Section -->
+                <section class="dashboard-section">
+                    <div class="welcome-card">
+                        <div class="welcome-content">
+                            <h1>Platform Overview</h1>
+                            <p>7 new account submissions awaiting verification. 3 team members to review.</p>
+                        </div>
+                        <div class="welcome-actions">
+                            <a href="#" class="btn btn-primary">
+                                <i class="ri-user-follow-line"></i>
+                                Verify Accounts
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Platform Stats Section -->
+                <section class="dashboard-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Platform Statistics</h2>
+                        <div class="date-filter">
+                            <span>Period:</span>
+                            <select class="period-select">
+                                <option>Last 7 days</option>
+                                <option selected>Last 30 days</option>
+                                <option>Last 3 months</option>
+                                <option>Custom</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-grid">
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <h3 class="stat-card-title">Total Users</h3>
+                                <i class="ri-user-line stat-card-icon"></i>
+                            </div>
+                            <div class="stat-card-value">1,248</div>
+                            <div class="stat-card-footer">
+                                <span class="stat-trend stat-up">
+                                    <i class="ri-arrow-up-line"></i>
+                                    +15% this month
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <h3 class="stat-card-title">Total Accounts</h3>
+                                <i class="ri-account-circle-line stat-card-icon"></i>
+                            </div>
+                            <div class="stat-card-value">3,542</div>
+                            <div class="stat-card-footer">
+                                <span class="stat-trend stat-up">
+                                    <i class="ri-arrow-up-line"></i>
+                                    +22% this month
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <h3 class="stat-card-title">Active Subscriptions</h3>
+                                <i class="ri-money-dollar-circle-line stat-card-icon"></i>
+                            </div>
+                            <div class="stat-card-value">985</div>
+                            <div class="stat-card-footer">
+                                <span class="stat-trend stat-up">
+                                    <i class="ri-arrow-up-line"></i>
+                                    +8% this month
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <h3 class="stat-card-title">Team Members</h3>
+                                <i class="ri-team-line stat-card-icon"></i>
+                            </div>
+                            <div class="stat-card-value">42</div>
+                            <div class="stat-card-footer">
+                                <span class="stat-trend stat-up">
+                                    <i class="ri-arrow-up-line"></i>
+                                    +3 this month
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Pending Verifications Section -->
+                <section class="dashboard-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Pending Verifications</h2>
+                        <div class="section-actions">
+                            <button class="btn btn-outline">
+                                <i class="ri-filter-line"></i>
+                                Filter
+                            </button>
+                            <button class="btn btn-primary">
+                                <i class="ri-check-double-line"></i>
+                                Review All
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="accounts-grid">
+                        <div class="account-card">
+                            <div class="account-header">
+                                <div class="account-logo">
+                                    <i class="ri-user-line"></i>
+                                </div>
+                                <div class="account-badge pending">Pending</div>
+                            </div>
+                            <div class="account-content">
+                                <h3 class="account-name">John Doe</h3>
+                                <p class="account-handle">Account Owner</p>
+                                <div class="account-stats">
+                                    <div class="stat">
+                                        <span class="stat-value">3</span>
+                                        <span class="stat-label">Accounts</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">Professional</span>
+                                        <span class="stat-label">Plan</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-footer">
+                                <span class="account-info">
+                                    <i class="ri-time-line"></i>
+                                    <span>Submitted 2 days ago</span>
+                                </span>
+                                <div class="account-actions">
+                                    <button class="btn btn-sm btn-outline">
+                                        <i class="ri-close-line"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-primary">
+                                        <i class="ri-check-line"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="account-card">
+                            <div class="account-header">
+                                <div class="account-logo">
+                                    <i class="ri-user-line"></i>
+                                </div>
+                                <div class="account-badge pending">Pending</div>
+                            </div>
+                            <div class="account-content">
+                                <h3 class="account-name">Sarah Miller</h3>
+                                <p class="account-handle">Account Manager</p>
+                                <div class="account-stats">
+                                    <div class="stat">
+                                        <span class="stat-value">5</span>
+                                        <span class="stat-label">Yrs Exp.</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">Social Media</span>
+                                        <span class="stat-label">Specialty</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-footer">
+                                <span class="account-info">
+                                    <i class="ri-time-line"></i>
+                                    <span>Submitted 1 day ago</span>
+                                </span>
+                                <div class="account-actions">
+                                    <button class="btn btn-sm btn-outline">
+                                        <i class="ri-close-line"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-primary">
+                                        <i class="ri-check-line"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="view-all-link">
+                        <a href="#">View all pending verifications <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </section>
+
+                <!-- System Health Section -->
+                <section class="dashboard-section">
+                    <div class="section-header">
+                        <h2 class="section-title">System Health</h2>
+                    </div>
+                    
+                    <div class="dashboard-grid">
+                        <div class="report-card">
+                            <div class="report-header">
+                                <h3 class="report-title">Server Status</h3>
+                                <div class="report-actions">
+                                    <button class="report-action-btn">
+                                        <i class="ri-refresh-line"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="report-content">
+                                <div class="stats-grid">
+                                    <div class="stat-item">
+                                        <div class="stat-value">99.9%</div>
+                                        <div class="stat-label">Uptime</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">24ms</div>
+                                        <div class="stat-label">Avg. Response</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">35%</div>
+                                        <div class="stat-label">CPU Usage</div>
+

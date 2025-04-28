@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Owner Dashboard | Murage Konnect</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icon library -->
+    <link href="https://unpkg.com/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="../../styles/dashboard.css">
+    <link rel="stylesheet" href="../../styles/components/sidebar.css">
+    <link rel="stylesheet" href="../../styles/components/tasks.css">
+    <link rel="stylesheet" href="../../styles/components/reports.css">
+    <link rel="stylesheet" href="../../styles/components/forms.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="/" class="sidebar-logo">
+                    <div class="sidebar-logo-icon">
+                        <span>MK</span>
+                    </div>
+                    <span class="sidebar-logo-text">Murage Konnect</span>
+                </a>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3 class="nav-section-title">Main</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="ri-dashboard-line"></i>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="ri-account-circle-line"></i>
+                                My Accounts
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="ri-task-line"></i>
+                                Tasks
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="ri-line-chart-line"></i>
+                                Reports
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3 class="nav-section-title">Account</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="ri-user-settings-line"></i>
+                                Profile
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="ri-secure-payment-line"></i>
+                                Billing
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="ri-team-line"></i>
+                                Team
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="ri-settings-4-line"></i>
+                                Settings
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <span>JS</span>
+                    </div>
+                    <div class="user-details">
+                        <div class="user-name">John Smith</div>
+                        <div class="user-role">Account Owner</div>
+                    </div>
+                    <button class="dropdown-toggle">
+                        <i class="ri-more-2-fill"></i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Dashboard Header -->
+            <header class="dashboard-header">
+                <div class="header-search">
+                    <div class="search-wrapper">
+                        <i class="ri-search-line"></i>
+                        <input type="text" placeholder="Search..." class="search-input">
+                    </div>
+                </div>
+                
+                <div class="header-actions">
+                    <button class="header-action-btn">
+                        <i class="ri-notification-3-line"></i>
+                        <span class="badge">3</span>
+                    </button>
+                    <button class="header-action-btn">
+                        <i class="ri-message-3-line"></i>
+                        <span class="badge">5</span>
+                    </button>
+                    <button class="header-action-btn">
+                        <i class="ri-question-line"></i>
+                    </button>
+                </div>
+            </header>
+            
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Dashboard Welcome Section -->
+                <section class="dashboard-section">
+                    <div class="welcome-card">
+                        <div class="welcome-content">
+                            <h1>Welcome back, John!</h1>
+                            <p>Here's a summary of your account management activity.</p>
+                        </div>
+                        <div class="welcome-actions">
+                            <a href="../accounts/submit.html" class="btn btn-primary">
+                                <i class="ri-add-line"></i>
+                                Submit New Account
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Stats Overview -->
+                <section class="dashboard-section">
+                    <div class="dashboard-grid">
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <h3 class="stat-card-title">Active Accounts</h3>
+                                <i class="ri-account-circle-line stat-card-icon"></i>
+                            </div>
+                            <div class="stat-card-value">5</div>
+                            <div class="stat-card-footer">
+                                <span class="stat-trend stat-up">
+                                    <i class="ri-arrow-up-line"></i>
+                                    2 new this month
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <h3 class="stat-card-title">Pending Tasks</h3>
+                                <i class="ri-task-line stat-card-icon"></i>
+                            </div>
+                            <div class="stat-card-value">12</div>
+                            <div class="stat-card-footer">
+                                <span class="stat-trend stat-down">
+                                    <i class="ri-arrow-down-line"></i>
+                                    3 completed today
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <h3 class="stat-card-title">Engagement Rate</h3>
+                                <i class="ri-line-chart-line stat-card-icon"></i>
+                            </div>
+                            <div class="stat-card-value">24.8%</div>
+                            <div class="stat-card-footer">
+                                <span class="stat-trend stat-up">
+                                    <i class="ri-arrow-up-line"></i>
+                                    5.2% since last month
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Task Management -->
+                <section class="dashboard-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Recent Tasks</h2>
+                        <a href="../tasks/create.html" class="btn btn-outline">
+                            <i class="ri-add-line"></i>
+                            Create Task
+                        </a>
+                    </div>
+                    
+                    <div class="task-list">
+                        <div class="task-card">
+                            <div class="task-header">
+                                <h3 class="task-title">Create weekly content schedule</h3>
+                                <span class="task-status in-progress">In Progress</span>
+                            </div>
+                            <div class="task-content">
+                                <p class="task-description">Develop a content calendar for the next week, including topics, posting times, and engagement strategy.</p>
+                                <div class="task-meta">
+                                    <div class="task-account">
+                                        <div class="task-account-avatar">
+                                            <span>IG</span>
+                                        </div>
+                                        <span>Instagram Business</span>
+                                    </div>
+                                    <div class="task-due-date">
+                                        <i class="ri-time-line"></i>
+                                        Due: Apr 30, 2025
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="task-footer">
+                                <div class="task-priority">
+                                    <span class="priority-indicator priority-high"></span>
+                                    High Priority
+                                </div>
+                                <div class="task-actions">
+                                    <button class="task-action-btn">
+                                        <i class="ri-eye-line"></i>
+                                    </button>
+                                    <button class="task-action-btn">
+                                        <i class="ri-edit-line"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="task-card">
+                            <div class="task-header">
+                                <h3 class="task-title">Respond to customer messages</h3>
+                                <span class="task-status pending">Pending</span>
+                            </div>
+                            <div class="task-content">
+                                <p class="task-description">Reply to all incoming customer inquiries and comments with the approved templated responses.</p>
+                                <div class="task-meta">
+                                    <div class="task-account">
+                                        <div class="task-account-avatar">
+                                            <span>FB</span>
+                                        </div>
+                                        <span>Facebook Business</span>
+                                    </div>
+                                    <div class="task-due-date">
+                                        <i class="ri-time-line"></i>
+                                        Due: Apr 29, 2025
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="task-footer">
+                                <div class="task-priority">
+                                    <span class="priority-indicator priority-medium"></span>
+                                    Medium Priority
+                                </div>
+                                <div class="task-actions">
+                                    <button class="task-action-btn">
+                                        <i class="ri-eye-line"></i>
+                                    </button>
+                                    <button class="task-action-btn">
+                                        <i class="ri-edit-line"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="view-all-link">
+                        <a href="../tasks/track.html">View all tasks <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </section>
+                
+                <!-- Account Overview Section -->
+                <section class="dashboard-section">
+                    <div class="section-header">
+                        <h2 class="section-title">My Accounts</h2>
+                        <a href="../accounts/submit.html" class="btn btn-outline">
+                            <i class="ri-add-line"></i>
+                            Add Account
+                        </a>
+                    </div>
+                    
+                    <div class="accounts-grid">
+                        <div class="account-card">
+                            <div class="account-header">
+                                <div class="account-logo">
+                                    <i class="ri-instagram-line"></i>
+                                </div>
+                                <div class="account-badge active">Active</div>
+                            </div>
+                            <div class="account-content">
+                                <h3 class="account-name">Instagram Business</h3>
+                                <p class="account-handle">@yourbusiness</p>
+                                <div class="account-stats">
+                                    <div class="stat">
+                                        <span class="stat-value">12.5K</span>
+                                        <span class="stat-label">Followers</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">3.2%</span>
+                                        <span class="stat-label">Engagement</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-footer">
+                                <span class="account-manager">
+                                    <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Manager" class="manager-avatar">
+                                    <span>Managed by Sarah T.</span>
+                                </span>
+                                <a href="#" class="account-details-btn">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="account-card">
+                            <div class="account-header">
+                                <div class="account-logo">
+                                    <i class="ri-facebook-circle-fill"></i>
+                                </div>
+                                <div class="account-badge active">Active</div>
+                            </div>
+                            <div class="account-content">
+                                <h3 class="account-name">Facebook Business</h3>
+                                <p class="account-handle">Your Business Page</p>
+                                <div class="account-stats">
+                                    <div class="stat">
+                                        <span class="stat-value">8.3K</span>
+                                        <span class="stat-label">Followers</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">2.7%</span>
+                                        <span class="stat-label">Engagement</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-footer">
+                                <span class="account-manager">
+                                    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Manager" class="manager-avatar">
+                                    <span>Managed by Alex M.</span>
+                                </span>
+                                <a href="#" class="account-details-btn">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="view-all-link">
+                        <a href="../accounts/manage.html">View all accounts <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </section>
+                
+                <!-- Reports Section -->
+                <section class="dashboard-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Performance Reports</h2>
+                        <div class="date-filter">
+                            <span>Period:</span>
+                            <select class="period-select">
+                                <option>Last 7 days</option>
+                                <option selected>Last 30 days</option>
+                                <option>Last 3 months</option>
+                                <option>Custom</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-grid">
+                        <div class="report-card">
+                            <div class="report-header">
+                                <h3 class="report-title">Engagement Overview</h3>
+                                <div class="report-actions">
+                                    <button class="report-action-btn">
+                                        <i class="ri-download-line"></i>
+                                    </button>
+                                    <button class="report-action-btn">
+                                        <i class="ri-more-2-fill"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="report-content">
+                                <div class="report-chart">
+                                    [Engagement Chart Placeholder]
+                                </div>
+                            </div>
+                            <div class="report-footer">
+                                <span>Updated 2 hours ago</span>
+                            </div>
+                        </div>
+
+                        <div class="report-card">
+                            <div class="report-header">
+                                <h3 class="report-title">Task Completion Rate</h3>
+                                <div class="report-actions">
+                                    <button class="report-action-btn">
+                                        <i class="ri-download-line"></i>
+                                    </button>
+                                    <button class="report-action-btn">
+                                        <i class="ri-more-2-fill"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="report-content">
+                                <div class="report-chart">
+                                    [Task Completion Chart Placeholder]
+                                </div>
+                            </div>
+                            <div class="report-footer">
+                                <span>Updated 1 hour ago</span>
+                            </div>
+                        </div>
+
+                        <div class="report-card">
+                            <div class="report-header">
+                                <h3 class="report-title">Growth Metrics</h3>
+                                <div class="report-actions">
+                                    <button class="report-action-btn">
+                                        <i class="ri-download-line"></i>
+                                    </button>
+                                    <button class="report-action-btn">
+                                        <i class="ri-more-2-fill"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="report-content">
+                                <div class="report-chart">
+                                    [Growth Chart Placeholder]
+                                </div>
+                            </div>
+                            <div class="report-footer">
+                                <span>Updated 30 minutes ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="view-all-link">
+                        <a href="../reports/overview.html">View detailed reports <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </section>
+
+                <!-- Quick Actions Section -->
+                <section class="dashboard-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Quick Actions</h2>
+                    </div>
+                    
+                    <div class="quick-actions-grid">
+                        <a href="../accounts/submit.html" class="quick-action-card">
+                            <div class="quick-action-icon">
+                                <i class="ri-add-circle-line"></i>
+                            </div>
+                            <h3 class="quick-action-title">Add Account</h3>
+                            <p class="quick-action-desc">Submit a new account for management</p>
+                        </a>
+                        
+                        <a href="../tasks/create.html" class="quick-action-card">
+                            <div class="quick-action-icon">
+                                <i class="ri-task-line"></i>
+                            </div>
+                            <h3 class="quick-action-title">Create Task</h3>
+                            <p class="quick-action-desc">Assign new tasks to your team</p>
+                        </a>
+                        
+                        <a href="../team/manage.html" class="quick-action-card">
+                            <div class="quick-action-icon">
+                                <i class="ri-team-line"></i>
+                            </div>
+                            <h3 class="quick-action-title">Manage Team</h3>
+                            <p class="quick-action-desc">View and manage your team members</p>
+                        </a>
+                        
+                        <a href="../reports/generate.html" class="quick-action-card">
+                            <div class="quick-action-icon">
+                                <i class="ri-file-chart-line"></i>
+                            </div>
+                            <h3 class="quick-action-title">Generate Report</h3>
+                            <p class="quick-action-desc">Create custom performance reports</p>
+                        </a>
+                    </div>
+                </section>
+            </div><!-- End of dashboard-content -->
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../scripts/main.js"></script>
+</body>
+</html>

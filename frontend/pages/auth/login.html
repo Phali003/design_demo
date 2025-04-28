@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Murage Konnect</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icon library -->
+    <link href="https://unpkg.com/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="../../styles/components/auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <a href="/" class="auth-logo">
+                    <span class="logo-text">Murage Konnect</span>
+                </a>
+                <h1>Log in to your account</h1>
+                <p>Welcome back! Please enter your credentials to access your account.</p>
+            </div>
+            
+            <form id="loginForm" class="auth-form" novalidate>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="input-wrapper">
+                        <i class="ri-mail-line"></i>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="Enter your email" 
+                            required 
+                            autocomplete="email"
+                        >
+                    </div>
+                    <span class="error-message" id="emailError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrapper">
+                        <i class="ri-lock-line"></i>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="Enter your password" 
+                            required
+                            autocomplete="current-password"
+                        >
+                        <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                            <i class="ri-eye-line"></i>
+                        </button>
+                    </div>
+                    <span class="error-message" id="passwordError"></span>
+                </div>
+                
+                <div class="form-group form-switch">
+                    <label class="switch">
+                        <input type="checkbox" id="enableTwoFactor">
+                        <span class="slider"></span>
+                    </label>
+                    <label for="enableTwoFactor">Enable 2-Factor Authentication</label>
+                </div>
+                
+                <div id="twoFactorGroup" class="form-group" style="display: none;">
+                    <label for="twoFactorCode">Two-Factor Code</label>
+                    <div class="input-wrapper">
+                        <i class="ri-shield-keyhole-line"></i>
+                        <input 
+                            type="text" 
+                            id="twoFactorCode" 
+                            name="twoFactorCode" 
+                            placeholder="Enter verification code" 
+                            maxlength="6"
+                            autocomplete="one-time-code"
+                        >
+                    </div>
+                    <span class="error-message" id="twoFactorError"></span>
+                </div>
+                
+                <div class="form-footer">
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="rememberMe" name="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <a href="reset-password.html" class="forgot-password">Forgot password?</a>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block" id="loginButton">
+                        <span>Log In</span>
+                        <div class="loader" style="display: none;"></div>
+                    </button>
+                </div>
+                
+                <div class="auth-divider">
+                    <span>Don't have an account?</span>
+                </div>
+                
+                <div class="register-options">
+                    <a href="register-owner.html" class="btn btn-outline">
+                        <i class="ri-user-line"></i>
+                        Register as Owner
+                    </a>
+                    <a href="register-manager.html" class="btn btn-outline">
+                        <i class="ri-user-settings-line"></i>
+                        Register as Manager
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle password visibility
+            const togglePassword = document.querySelector('.toggle-password');
+            togglePassword.addEventListener('click', function() {
+                const passwordInput = document.getElementById('password');
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    this.innerHTML = '<i class="ri-eye-off-line"></i>';
+                } else {
+                    passwordInput.type = 'password';
+                    this.innerHTML = '<i class="ri-eye-line"></i>';
+                }
+            });
+            
+            // Toggle two-factor authentication input
+            const enableTwoFactor = document.getElementById('enableTwoFactor');
+            const twoFactorGroup = document.getElementById('twoFactorGroup');
+            
+            enableTwoFactor.addEventListener('change', function() {
+                twoFactorGroup.style.display = this.checked ? 'block' : 'none';
+            });
+            
+            // Form validation
+            const loginForm = document.getElementById('loginForm');
+            const email = document.getElementById('email');
+            const password = document.getElementById('password');
+            const twoFactorCode = document.getElementById('twoFactorCode');
+            const emailError = document.getElementById('emailError');
+            const passwordError = document.getElementById('passwordError');
+            const twoFactorError = document.getElementById('twoFactorError');
+            const loginButton = document.getElementById('loginButton');
+            const loader = loginButton.querySelector('.loader');
+            
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Reset error messages
+                emailError.textContent = '';
+                passwordError.textContent = '';
+                twoFactorError.textContent = '';
+                
+                // Validate email
+                if (!email.value.trim()) {
+                    emailError.textContent = 'Email is required';
+                    email.focus();
+                    return;
+                } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+                    emailError.textContent = 'Please enter a valid email address';
+                    email.focus();
+                    return;
+                }
+                
+                // Validate password
+                if (!password.value) {
+                    passwordError.textContent = 'Password is required';
+                    password.focus();
+                    return;
+                }
+                
+                // Validate two-factor code if enabled
+                if (enableTwoFactor.checked && !twoFactorCode.value.trim()) {
+                    twoFactorError.textContent = 'Two-factor code is required';
+                    twoFactorCode.focus();
+                    return;
+                } else if (enableTwoFactor.checked && !/^\d{6}$/.test(twoFactorCode.value.trim())) {
+                    twoFactorError.textContent = 'Two-factor code must be 6 digits';
+                    twoFactorCode.focus();
+                    return;
+                }
+                
+                // Show loading state
+                loginButton.disabled = true;
+                loginButton.querySelector('span').style.display = 'none';
+                loader.style.display = 'block';
+                
+                // Simulate form submission (in a real app, this would be an API call)
+                setTimeout(function() {
+                    // For demo: randomly succeed or fail login
+                    const success = Math.random() > 0.3; // 70% success rate
+                    
+                    if (success) {
+                        // Redirect to appropriate dashboard based on role
+                        // This would normally be determined by the server response
+                        const isOwner = email.value.includes('owner');
+                        const isManager = email.value.includes('manager');
+                        const isAdmin = email.value.includes('admin');
+                        
+                        if (isAdmin) {
+                            window.location.href = '../dashboard/admin.html';
+                        } else if (isManager) {
+                            window.location.href = '../dashboard/manager.html';
+                        } else {
+                            window.location.href = '../dashboard/owner.html';
+                        }
+                    } else {
+                        // Show error message
+                        alert('Invalid login credentials. Please try again.');
+                        
+                        // Reset loading state
+                        loginButton.disabled = false;
+                        loginButton.querySelector('span').style.display = 'inline';
+                        loader.style.display = 'none';
+                    }
+                }, 1500);
+            });
+        });
+    </script>
+</body>
+</html>
+

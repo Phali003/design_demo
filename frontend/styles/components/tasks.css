@@ -1,0 +1,149 @@
+/* Task Component Styles */
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.task-card {
+    background-color: white;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.task-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.task-header {
+    padding: 1rem;
+    border-bottom: 1px solid var(--neutral-200);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-title {
+    font-weight: 600;
+    color: var(--neutral-800);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.task-status {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--border-radius-full);
+}
+
+.task-status.pending {
+    background-color: #FEF3C7;
+    color: #D97706;
+}
+
+.task-status.in-progress {
+    background-color: #DBEAFE;
+    color: #2563EB;
+}
+
+.task-status.completed {
+    background-color: #D1FAE5;
+    color: #059669;
+}
+
+.task-content {
+    padding: 1rem;
+}
+
+.task-description {
+    color: var(--neutral-600);
+    margin-bottom: 1rem;
+}
+
+.task-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--neutral-500);
+    font-size: 0.875rem;
+}
+
+.task-account {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.task-account-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.task-due-date {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.task-footer {
+    padding: 0.75rem 1rem;
+    background-color: var(--neutral-100);
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-priority {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.priority-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.priority-high {
+    background-color: #EF4444;
+}
+
+.priority-medium {
+    background-color: #F59E0B;
+}
+
+.priority-low {
+    background-color: #10B981;
+}
+
+.task-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.task-action-btn {
+    background: none;
+    border: none;
+    color: var(--neutral-600);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.task-action-btn:hover {
+    color: var(--primary-color);
+}
+

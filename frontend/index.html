@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Murage Konnect - Account Management Platform</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon library -->
+    <link
+      href="https://unpkg.com/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/components/auth.css" />
+    <link rel="stylesheet" href="styles/components/forms.css" />
+    <link rel="stylesheet" href="styles/components/reports.css" />
+    <link rel="stylesheet" href="styles/components/sidebar.css" />
+    <link rel="stylesheet" href="styles/components/tasks.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <a href="/" class="logo">
+            <div class="logo-icon">
+              <span class="logo-letter">M</span>
+              <span class="logo-letter">K</span>
+            </div>
+            <span class="logo-text">Murage Konnect</span>
+          </a>
+
+          <nav class="main-nav">
+            <ul class="nav-list">
+              <li><a href="#features" class="nav-link">Features</a></li>
+              <li><a href="#pricing" class="nav-link">Pricing</a></li>
+              <li><a href="#about" class="nav-link">About</a></li>
+              <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="auth-buttons">
+              <a
+                href="pages/auth/login.html"
+                class="btn btn-secondary"
+                id="loginBtn"
+                >Login</a
+              >
+              <a href="pages/auth/register-owner.html" class="btn btn-primary"
+                >Get Started</a
+              >
+            </div>
+          </nav>
+
+          <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <i class="ri-menu-line"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Streamline Your Account Management</h1>
+          <p>
+            Professional account management services to handle moderation,
+            content, and engagement for your digital presence.
+          </p>
+          <div class="hero-buttons">
+            <a href="#pricing" class="btn btn-primary">View Plans</a>
+            <a href="#features" class="btn btn-secondary">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+      <div class="container">
+        <h2>Platform Features</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <i class="ri-shield-check-line"></i>
+            <h3>Secure Account Management</h3>
+            <p>
+              Advanced security measures to protect your account credentials and
+              sensitive information.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i class="ri-team-line"></i>
+            <h3>Team Management</h3>
+            <p>
+              Assign and manage trusted account managers based on expertise and
+              reliability.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i class="ri-task-line"></i>
+            <h3>Task Tracking</h3>
+            <p>
+              Real-time task management and progress tracking for complete
+              transparency.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i class="ri-bar-chart-line"></i>
+            <h3>Analytics & Reporting</h3>
+            <p>
+              Comprehensive reports and analytics on account performance and
+              engagement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+      <div class="container">
+        <h2>Pricing Plans</h2>
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <h3>Starter</h3>
+            <div class="price">$99<span>/month</span></div>
+            <ul class="pricing-features">
+              <li>
+                <i class="ri-checkbox-circle-line"></i>1 Account Management
+              </li>
+              <li><i class="ri-checkbox-circle-line"></i>Basic Reporting</li>
+              <li><i class="ri-checkbox-circle-line"></i>5 Tasks per Day</li>
+              <li><i class="ri-checkbox-circle-line"></i>Email Support</li>
+            </ul>
+            <a href="/register" class="btn btn-secondary">Get Started</a>
+          </div>
+          <div class="pricing-card featured">
+            <h3>Professional</h3>
+            <div class="price">$199<span>/month</span></div>
+            <ul class="pricing-features">
+              <li>
+                <i class="ri-checkbox-circle-line"></i>3 Account Management
+              </li>
+              <li><i class="ri-checkbox-circle-line"></i>Advanced Reporting</li>
+              <li><i class="ri-checkbox-circle-line"></i>Unlimited Tasks</li>
+              <li><i class="ri-checkbox-circle-line"></i>Priority Support</li>
+            </ul>
+            <a href="/register" class="btn btn-primary">Get Started</a>
+          </div>
+          <div class="pricing-card">
+            <h3>Enterprise</h3>
+            <div class="price">Custom</div>
+            <ul class="pricing-features">
+              <li><i class="ri-checkbox-circle-line"></i>Unlimited Accounts</li>
+              <li><i class="ri-checkbox-circle-line"></i>Custom Reporting</li>
+              <li><i class="ri-checkbox-circle-line"></i>Dedicated Manager</li>
+              <li><i class="ri-checkbox-circle-line"></i>24/7 Support</li>
+            </ul>
+            <a href="/contact" class="btn btn-secondary">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="about-content">
+          <h2>About Murage Konnect</h2>
+          <p>
+            We're a dedicated team of account management professionals committed
+            to helping businesses and individuals maintain and grow their
+            digital presence.
+          </p>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <h3>500+</h3>
+              <p>Accounts Managed</p>
+            </div>
+            <div class="stat-card">
+              <h3>98%</h3>
+              <p>Client Satisfaction</p>
+            </div>
+            <div class="stat-card">
+              <h3>24/7</h3>
+              <p>Support Available</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Get in Touch</h2>
+        <div class="contact-container">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="ri-mail-line"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Email Us</h3>
+                <p>info@muragekonnect.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="ri-phone-line"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Call Us</h3>
+                <p>+1 (555) 123-4567</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="ri-map-pin-line"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Visit Us</h3>
+                <p>
+                  123 Business Avenue, Suite 100<br />San Francisco, CA 94107
+                </p>
+              </div>
+            </div>
+          </div>
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="logo">
+              <span class="logo-text">Murage Konnect</span>
+            </div>
+            <p>
+              Professional account management services for your digital
+              presence.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="ri-twitter-fill"></i></a>
+              <a href="#"><i class="ri-facebook-fill"></i></a>
+              <a href="#"><i class="ri-linkedin-fill"></i></a>
+              <a href="#"><i class="ri-instagram-fill"></i></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Legal</h3>
+            <ul>
+              <li><a href="/privacy">Privacy Policy</a></li>
+              <li><a href="/terms">Terms of Service</a></li>
+              <li><a href="/security">Security</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Murage Konnect. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Log in to your account</h2>
+          <button class="modal-close">&times;</button>
+        </div>
+        <form id="loginForm" class="auth-form" novalidate>
+          <div class="form-group">
+            <label for="loginEmail">Email</label>
+            <div class="input-wrapper">
+              <i class="ri-mail-line"></i>
+              <input
+                type="email"
+                id="loginEmail"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <div class="input-wrapper">
+              <i class="ri-lock-line"></i>
+              <input
+                type="password"
+                id="loginPassword"
+                name="password"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">
+              Log In
+            </button>
+          </div>
+          <div class="form-footer">
+            <a href="pages/auth/reset-password.html">Forgot password?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

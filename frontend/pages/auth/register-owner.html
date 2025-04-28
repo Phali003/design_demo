@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register as Business Owner | Murage Konnect</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icon library -->
+    <link href="https://unpkg.com/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="../../styles/components/auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card register-card">
+            <div class="auth-header">
+                <a href="/" class="auth-logo">
+                    <span class="logo-text">Murage Konnect</span>
+                </a>
+                <h1>Create a Business Owner Account</h1>
+                <p>Join our platform to boost your business's social media presence and connect with professional account managers.</p>
+            </div>
+            <form id="registrationForm" class="auth-form" novalidate>
+                <!-- Registration Progress Steps -->
+                <div class="register-steps">
+                    <div class="step active" data-step="1">
+                        <span class="step-number">1</span>
+                        <span class="step-label">Personal</span>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step" data-step="2">
+                        <span class="step-number">2</span>
+                        <span class="step-label">Business</span>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step" data-step="3">
+                        <span class="step-number">3</span>
+                        <span class="step-label">Goals</span>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step" data-step="4">
+                        <span class="step-number">4</span>
+                        <span class="step-label">Finalize</span>
+                    </div>
+                </div>
+                
+                <!-- Step 1: Personal Information -->
+                <div class="form-step active" id="step1">
+                    <h2 class="form-step-title">Personal Information</h2>
+                    
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <div class="input-wrapper">
+                            <i class="ri-user-line"></i>
+                            <input 
+                                type="text" 
+                                id="fullName" 
+                                name="fullName" 
+                                placeholder="Enter your full name" 
+                                required
+                            >
+                        </div>
+                        <span class="error-message" id="fullNameError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <div class="input-wrapper">
+                            <i class="ri-mail-line"></i>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="Enter your email" 
+                                required
+                                autocomplete="email"
+                            >
+                        </div>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-wrapper">
+                            <i class="ri-lock-line"></i>
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password" 
+                                placeholder="Create a password" 
+                                required
+                                autocomplete="new-password"
+                            >
+                            <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                                <i class="ri-eye-line"></i>
+                            </button>
+                        </div>
+                        <div class="password-strength">
+                            <div class="strength-meter">
+                                <div class="strength-bar"></div>
+                            </div>
+                            <span class="strength-text">Password strength</span>
+                        </div>
+                        <span class="error-message" id="passwordError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <div class="input-wrapper">
+                            <i class="ri-lock-line"></i>
+                            <input 
+                                type="password" 
+                                id="confirmPassword" 
+                                name="confirmPassword" 
+                                placeholder="Confirm your password" 
+                                required
+                                autocomplete="new-password"
+                            >
+                        </div>
+                        <span class="error-message" id="confirmPasswordError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number (Optional)</label>
+                        <div class="input-wrapper">
+                            <i class="ri-phone-line"></i>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone" 
+                                placeholder="Enter your phone number"
+                            >
+                        </div>
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-primary btn-block next-step">Continue</button>
+                    </div>
+                    
+                    <div class="form-footer-links">
+                        <span>Already have an account? <a href="login.html">Log in</a></span>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Business Information -->
+                <div class="form-step" id="step2">
+                    <h2 class="form-step-title">Business Information</h2>
+                    
+                    <div class="form-group">
+                        <label for="businessName">Business Name</label>
+                        <div class="input-wrapper">
+                            <i class="ri-building-line"></i>
+                            <input 
+                                type="text" 
+                                id="businessName" 
+                                name="businessName" 
+                                placeholder="Enter your business name" 
+                                required
+                            >
+                        </div>
+                        <span class="error-message" id="businessNameError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="businessType">Business Type</label>
+                        <div class="input-wrapper">
+                            <i class="ri-store-line"></i>
+                            <select id="businessType" name="businessType" required>
+                                <option value="" disabled selected>Select business type</option>
+                                <option value="sole-proprietorship">Sole Proprietorship</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="llc">Limited Liability Company (LLC)</option>
+                                <option value="corporation">Corporation</option>
+                                <option value="non-profit">Non-Profit</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <span class="error-message" id="businessTypeError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="businessAddress">Business Address</label>
+                        <div class="input-wrapper">
+                            <i class="ri-map-pin-line"></i>
+                            <textarea 
+                                id="businessAddress" 
+                                name="businessAddress" 
+                                placeholder="Enter your business address"
+                                rows="2"
+                                required
+                            ></textarea>
+                        </div>
+                        <span class="error-message" id="businessAddressError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="businessContact">Contact Number</label>
+                        <div class="input-wrapper">
+                            <i class="ri-phone-line"></i>
+                            <input 
+                                type="tel" 
+                                id="businessContact" 
+                                name="businessContact" 
+                                placeholder="Enter business contact number"
+                                required
+                            >
+                        </div>
+                        <span class="error-message" id="businessContactError"></span>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-outline prev-step">Back</button>
+                        <button type="button" class="btn btn-primary next-step">Continue</button>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Preferences and Final Submission -->
+                <div class="form-step" id="step3">
+                    <h2 class="form-step-title">Preferences and Settings</h2>
+                    
+                    <div class="form-group">
+                        <label>Notification Preferences</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="emailNotifications" name="notifications" value="email" checked>
+                                <label for="emailNotifications">Email Notifications</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="smsNotifications" name="notifications" value="sms">
+                                <label for="smsNotifications">SMS Notifications</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="weeklyReports" name="notifications" value="weeklyReports" checked>
+                                <label for="weeklyReports">Weekly Reports</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="accountAlerts" name="notifications" value="accountAlerts" checked>
+                                <label for="accountAlerts">Account Alerts</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="communicationPreference">Preferred Communication Method</label>
+                        <div class="input-wrapper">
+                            <i class="ri-chat-3-line"></i>
+                            <select id="communicationPreference" name="communicationPreference">
+                                <option value="" disabled selected>Select preferred method</option>
+                                <option value="email">Email</option>
+                                <option value="phone">Phone</option>
+                                <option value="sms">SMS</option>
+                                <option value="platform">In-platform messaging</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group form-checkbox">
+                        <input type="checkbox" id="termsAccept" name="termsAccept" required>
+                        <label for="termsAccept">
+                            I agree to the <a href="/terms" target="_blank">Terms of Service</a> and <a href="/privacy" target="_blank">Privacy Policy</a>
+                        </label>
+                        <span class="error-message" id="termsAcceptError"></span>
+                    </div>
+                    
+                    <div class="form-group form-checkbox">
+                        <input type="checkbox" id="marketingAccept" name="marketingAccept">
+                        <label for="marketingAccept">
+                            I would like to receive marketing communications about product updates and offers
+                        </label>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-outline prev-step">Back</button>
+                        <button type="submit" class="btn btn-primary btn-block" id="registerButton">
+                            <span>Create Account</span>
+                            <div class="loader" style="display: none;"></div>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Step 4: Finalize -->
+                <div class="form-step" id="step4">
+                    <h2 class="form-step-title">Finalize Your Registration</h2>
+                    
+                    <div class="form-group">
+                        <label for="hearAboutUs">How did you hear about us?</label>
+                        <div class="input-wrapper">
+                            <i class="ri-question-line"></i>
+                            <select id="hearAboutUs" name="hearAboutUs">
+                                <option value="">Select an option</option>
+                                <option value="search">Search Engine</option>
+                                <option value="social">Social Media</option>
+                                <option value="friend">Friend/Colleague</option>
+                                <option value="ad">Advertisement</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="additionalInfo">Additional Information (Optional)</label>
+                        <div class="input-wrapper textarea-wrapper">
+                            <i class="ri-file-list-line"></i>
+                            <textarea 
+                                id="additionalInfo" 
+                                name="additionalInfo" 
+                                placeholder="Any specific requirements or information you'd like to share"
+                                rows="4"
+                            ></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group checkbox-single">
+                        <input type="checkbox" id="termsAgree" name="termsAgree" required>
+                        <label for="termsAgree">I agree to the <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Privacy Policy</a></label>
+                        <span class="error-message" id="termsAgreeError"></span>
+                    </div>
+                    
+                    <!-- Hidden input for role identification -->
+                    <input type="hidden" id="userRole" name="userRole" value="owner">
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-outline prev-step">Back</button>
+                        <button type="submit" class="btn btn-primary">Complete Registration</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const registrationForm = document.getElementById('registrationForm');
+            
+            if (!registrationForm) return;
+            
+            // Multi-step form navigation
+            const steps = Array.from(document.querySelectorAll('.form-step'));
+            const stepIndicators = Array.from(document.querySelectorAll('.register-steps .step'));
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <div class="input-wrapper">
+                            <i class="ri-lock-line"></i>
+                            <input 
+                                type="password" 
+                                id="confirmPassword" 
+                                name="confirmPassword" 
+                                placeholder="Confirm your password" 
+                                required
+                                autocomplete="new-password"
+                            >
+                        </div>
+                        <span class="error-message" id="confirmPasswordError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number (Optional)</label>
+                        <div class="input-wrapper">
+                            <i class="ri-phone-line"></i>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone" 
+                                placeholder="Enter your phone number"
+                            >
+                        </div>
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-primary btn-block next-step">Continue</button>
+                    </div>
+                    
+                    <div class="form-footer-links">
+                        <span>Already have an account? <a href="login.html">Log in</a></span>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Business Information -->
+                <div class="form-step" id="step2">
+                    <h2 class="form-step-title">Business Information</h2>
+                    
+                    <div class="form-group">
+                        <label for="businessName">Business Name</label>
+                        <div class="input-wrapper">
+                            <i class="ri-building-line"></i>
+                            <input 
+                                type="text" 
+                                id="businessName" 
+                                name="businessName" 
+                                placeholder="Enter your business name" 
+                                required
+                            >
+                        </div>
+                        <span class="error-message" id="businessNameError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="businessType">Business Type</label>
+                        <div class="input-wrapper">
+                            <i class="ri-store-line"></i>
+                            <select id="businessType" name="businessType" required>
+                                <option value="">Select business type</option>
+                                <option value="retail">Retail</option>
+                                <option value="restaurant">Restaurant/Food Service</option>
+                                <option value="services">Professional Services</option>
+                                <option value="technology">Technology</option>
+                                <option value="manufacturing">Manufacturing</option>
+                                <option value="healthcare">Healthcare</option>
+                                <option value="education">Education</option>
+                                <option value="nonprofit">Non-Profit</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <span class="error-message" id="businessTypeError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="businessSize">Business Size</label>
+                        <div class="input-wrapper">
+                            <i class="ri-team-line"></i>
+                            <select id="businessSize" name="businessSize" required>
+                                <option value="">Select business size</option>
+                                <option value="1-10">1-10 employees</option>
+                                <option value="11-50">11-50 employees</option>
+                                <option value="51-200">51-200 employees</option>
+                                <option value="201-500">201-500 employees</option>
+                                <option value="500+">500+ employees</option>
+                            </select>
+                        </div>
+                        <span class="error-message" id="businessSizeError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="website">Website (Optional)</label>
+                        <div class="input-wrapper">
+                            <i class="ri-global-line"></i>
+                            <input 
+                                type="url" 
+                                id="website" 
+                                name="website" 
+                                placeholder="Enter your business website URL"
+                            >
+                        </div>
+                        <span class="error-message" id="websiteError"></span>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-outline prev-step">Back</button>
+                        <button type="button" class="btn btn-primary next-step">Continue</button>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Social Media Goals -->
+                <div class="form-step" id="step3">
+                    <h2 class="form-step-title">Social Media Goals</h2>
+                    
+                    <div class="form-group">
+                        <label for="platforms">Current Social Media Presence</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="facebook" name="platforms" value="facebook">
+                                <label for="facebook">Facebook</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="instagram" name="platforms" value="instagram">
+                                <label for="instagram">Instagram</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="twitter" name="platforms" value="twitter">
+                                <label for="twitter">Twitter</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="linkedin" name="platforms" value="linkedin">
+                                <label for="linkedin">LinkedIn</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="tiktok" name="platforms" value="tiktok">
+                                <label for="tiktok">TikTok</label>
+                            </div>
+                        </div>
+                        <span class="error-message" id="platformsError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="primaryGoal">Primary Social Media Goal</label>
+                        <div class="input-wrapper">
+                            <i class="ri-target-line"></i>
+                            <select id="primaryGoal" name="primaryGoal" required>
+                                <option value="">Select your main goal</option>
+                                <option value="brandAwareness">Increase Brand Awareness</option>
+                                <option value="leadGeneration">Generate Leads/Sales</option>
+                                <option value="customerEngagement">Improve Customer Engagement</option>
+                                <option value="traffic">Drive Website Traffic</option>
+                                <option value="communityBuilding">Build Community</option>
+                                <option value="content">Enhance Content Strategy</option>
+                            </select>
+                        </div>
+                        <span class="error-message" id="primaryGoalError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="budget">Monthly Budget for Social Media</label>
+                        <div class="input-wrapper">
+                            <i class="ri-money-dollar-circle-line"></i>
+                            <select id="budget" name="budget" required>
+                                <option value="">Select budget range</option>
+                                <option value="under500">Under $500</option>
+                                <option value="500-1000">$500 - $1,000</option>
+                                <option value="1000-2500">$1,000 - $2,500</option>
+                                <option value="2500-5000">$2,500 - $5,000</option>
+                                <option value="above5000">Above $5,000</option>
+                            </select>
+                        </div>
+                        <span class="error-message" id="budgetError"></span>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-outline prev-step">Back</button>
+                        <button type="button" class="btn btn-primary next-step">Continue</button>
+                    </div>
+                </div>
+                
+                <!-- Step 4: Finalize -->
+                <div class="form-step" id="step4">
+                    <h2 class="form-step-title">Finalize Your Registration</h2>
+                    
+                    <div class="form-group">
+                        <label for="hearAboutUs">How did you hear about us?</label>
+                        <div class="input-wrapper">
+                            <i class="ri-question-line"></i>
+                            <select id="hearAboutUs" name="hearAboutUs">
+                                <option value="">Select an option</option>
+                                <option value="search">Search Engine</option>
+                                <option value="social">Social Media</option>
+                                <option value="friend">Friend/Colleague</option>
+                                <option value="ad">Advertisement</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="additionalInfo">Additional Information or Requirements (Optional)</label>
+                        <div class="input-wrapper textarea-wrapper">
+                            <i class="ri-file-list-line"></i>
+                            <textarea 
+                                id="additionalInfo" 
+                                name="additionalInfo" 
+                                placeholder="Any specific requirements or information you'd like to share"
+                                rows="4"
+                            ></textarea>
+                        </div>
+                    </div>
